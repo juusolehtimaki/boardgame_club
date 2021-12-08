@@ -1,4 +1,4 @@
-#!/home/ap/Desktop/game_club/cbc_env/bin/python3
+#!/home/ap/Desktop/game_club/gc_env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
