@@ -1,0 +1,19 @@
+{% extends 'game_clubs/base.html' %}
+
+{% block content %}
+
+
+
+<p>Add a new review:</p>
+<form action="{% url 'game_clubs:new_review'%}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add a review</button>
+</form>
+
+<form action="{% url 'game_clubs:edit_review'%}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add a review</button>
+</form>
+{% endblock content %}

@@ -16,6 +16,6 @@ def register(request):
         if form.is_valid():
             new_user = form.save()
             login(request, new_user)
-            return redirect('crazy_book_clubs:index')
+            return redirect('game_clubs:index')
     context = {'form':form}
     return render(request, 'registration/register.html',context)

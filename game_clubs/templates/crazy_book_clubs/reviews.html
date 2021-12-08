@@ -1,0 +1,27 @@
+{% extends 'game_clubs/base.html' %}
+{% block content %}
+
+<h3>Reviews for {{game}} </h3>
+
+
+<ul>
+{% for review in reviews %}
+    <li>
+       <p>{{ review.date_added|date:'M d, Y H:i' }}</p>
+       <p>{{ review.my_review|linebreaks }}</p>
+       <a href="{% url 'game_clubs:new_review' %}">Add a new review</a>
+       
+       
+       
+    </li>
+
+{% empty %}
+    <li>No reviews have been added yet</li>
+    <p>
+        <a href="{% url 'game_clubs:new_review' %}">Add a new review</a>
+        
+    </p>
+{% endfor %}
+</ul>
+
+{% endblock content %}

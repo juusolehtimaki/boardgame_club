@@ -1,4 +1,4 @@
-{% extends 'crazy_book_clubs/base.html' %}
+{% extends 'game_clubs/base.html' %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
 
     <button name="submit">Register</button>
     <input type="hidden" name="next"
-        value="{% url 'crazy_book_clubs:index' %}"/>
+        value="{% url 'game_clubs:index' %}"/>
 
 </form>
 
