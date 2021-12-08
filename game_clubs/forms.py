@@ -1,9 +1,9 @@
 from django import forms
-from .models import game, Review
+from .models import Game, Review
 
 class gameForm(forms.ModelForm):
     class Meta:
-        model = game
+        model = Game
         fields = ['name','authors','year_published']
         labels = {'name':'', 'authors':'','year_published':''}
         

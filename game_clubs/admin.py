@@ -2,9 +2,9 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import game, Review
+from .models import Game, Review
 
-admin.site.register(game)
+admin.site.register(Game)
 admin.site.register(Review)
 
 

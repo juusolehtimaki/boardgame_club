@@ -1,14 +1,22 @@
 {% extends 'game_clubs/base.html' %}
 
 {% block page_header %}
-    <div class="jumbotron">
-        <h1 class="display-3">Track your games.</h1>
-
-        <p class="lead">Submit your own games and keep a list of the games already submitted! 
-        </p>
-
-        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
-        role="button">Register &raquo;</a>
-    </div>
-
+<div class="bg-dark">  
+    
+    <div class="bg-dark text-secondary px-4 py-5 text-center">
+        <div class="py-5">
+          <h1 class="display-5 fw-bold text-white">Track your games.</h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="fs-7 mb-5">Submit your own games and keep a list of the games already submitted! </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+                role="button">Register &raquo;</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="b-example-divider mb-0"></div>
 {% endblock page_header %}
+
