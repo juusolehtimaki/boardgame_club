@@ -60,6 +60,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'game_club.urls'
 
+TEMPLATE_DIRS = [
+    'templates/game_clubs/templates'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
