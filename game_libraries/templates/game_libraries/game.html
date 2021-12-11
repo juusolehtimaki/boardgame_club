@@ -1,0 +1,16 @@
+{% extends 'game_libraries/base.html' %}
+
+{% block content %}
+    <p>Game: {{ game }}</p>
+    <p>Loans:</p>
+    <ul>
+    {% for loan in loans %}
+        <li>
+         <p>{{ loan.date_added|date:'M d, Y H:i' }}</p>
+         <p>{{ loan.text|linebreaks }}</p>
+        </li>
+ {% empty %}
+    <li>There are no loans for this game yet.</li>
+ {% endfor %}
+ </ul>
+{% endblock content %}
