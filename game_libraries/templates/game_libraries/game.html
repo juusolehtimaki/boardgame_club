@@ -1,16 +1,29 @@
 {% extends 'game_libraries/base.html' %}
+{% block page_header %}
+<h3>{{ game }}</h3>
+{% endblock page_header %}
 
 {% block content %}
-    <p>Game: {{ game }}</p>
+    
     <p>Loans:</p>
+    <p>
+        <a href="{% url 'game_libraries:new_loan' game.id %}">Add a new loan</a>
+    </p>
     <ul>
     {% for loan in loans %}
-        <li>
-         <p>{{ loan.date_added|date:'M d, Y H:i' }}</p>
-         <p>{{ loan.text|linebreaks }}</p>
-        </li>
+    <div class="card mb-3">
+         <h4 class="card-header">
+         {{ loan.date_added|date:'M d, Y H:i' }}
+         <small><a href="{% url 'game_libraries:edit_loan' loan.id %}">
+         edit loan</a></small>
+         </h4>
+         <div class="card-body">
+         {{ loan.text|linebreaks }}
+         </div>
+         </div>
  {% empty %}
-    <li>There are no loans for this game yet.</li>
+    <p>There are no loans for this game yet.</p>
  {% endfor %}
  </ul>
+ 
 {% endblock content %}

@@ -1,4 +1,7 @@
 {% extends "game_libraries/base.html" %}
+{% block page_header %}
+ <h1>Games</h1>
+{% endblock page_header %}
 
 {% block content %}
 
@@ -7,14 +10,14 @@
     <ul>
         {% for game in games %}
 
-            <li>
+            <li><h3>
                 <a href="{% url 'game_libraries:game' game.id %}">{{ game }}</a>
-            </li>
+            </h3></li>
         {% empty %}
-            <li> No games have been added yet</li>
+            <li><h3> No games have been added yet </h3></li>
         {% endfor %}
     </ul>
 
-    <a href="{% url 'game_libraries:new_game' %}">Add a new game</a>
+<h3><a href="{% url 'game_libraries:new_game' %}">Add a new game</a></h3>
      
 {% endblock content %}

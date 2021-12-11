@@ -1,9 +1,10 @@
 {% extends "game_libraries/base.html" %}
 
-{% block content %}
-
-<p> Game library</p>
-
-<p> Game library lets you loan games!</p>
-
-{% endblock content %}
+{% block page_header %}
+ <div class="jumbotron">
+ <h1 class="display-3">Game library.</h1>
+ <p class="lead">Loan boardgames and make your own games loanable!</p>
+ <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+ role="button">Register &raquo;</a>
+ </div>
+ {% endblock page_header %}
