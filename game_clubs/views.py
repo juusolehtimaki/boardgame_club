@@ -1,9 +1,8 @@
 from django.shortcuts import render,redirect
 
-import game_clubs
 
-from .models import Game, Review, GameInstance
-from .forms import gameForm, ReviewForm
+from .models import Game, Review
+from .forms import gameForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -18,20 +17,15 @@ def index(request):
 def games(request):
 
     games = Game.objects.order_by('-date_added')
-
     context = { 'games': games }
     return render(request, 'game_clubs/games.html', context)
 
 #@login_required
 def game(request):
 
-    
-    game = Game.objects.get(id=game_id)
-    
-    
-    entries = game.entry_set.order_by('-date_added')
-    context = {'topic': game, 'entries': entries}
-    return render(request, 'learning_logs/game.html', context)
+    game = Game.objects.order_by('-date_added')
+    context = {'game': game}
+    return render(request, 'game_clubs/game.html', context)
 
 
 

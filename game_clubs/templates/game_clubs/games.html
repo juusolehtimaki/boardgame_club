@@ -10,7 +10,7 @@
 <ul>
 {% for game in games %}
     <li><h3>
-        <a href=>{{game}}</a>
+        <a href="{% url 'game_clubs:game' %}">{{game}}</a>
         
     </h3></li>
 {% empty %}

@@ -8,7 +8,10 @@ app_name = 'game_clubs'
 
 urlpatterns = [
     path('', views.index, name="index"),
+
     path('games/', views.games, name='games'),
+
+    path('games/<game_id>', views.game, name='game'),
     
     path('new_game/', views.new_game, name='new_game'),
     
